@@ -1,24 +1,42 @@
-# README
+# COSS_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+中小企業の運用をサポートするサービス(Company Operation Support Service)
+一般公開用、社員用、管理者用の画面が分かれており
+①一般公開画面では社員が投稿したブログを閲覧でき、企業に対して採用応募ができます。
+②社員画面ではブログの作成、管理者からのお知らせや送信された資料の確認、
+自社の月別業績推移をグラフで確認できます。
+③管理者画面では社員の一覧、詳細の確認、社員全体へのお知らせの作成、個人への資料送信、
+毎月の業績入力ができます。
 
-Things you may want to cover:
+本来一般公開用のHPと、業務システムを同じサーバー上に稼働する事は非推奨ですが、
+今回はブログ機能という社員が投稿したデータを一般の方も閲覧できる機能の実装テスト
+も兼ねている為、同じサーバー上での稼働となります。
 
-* Ruby version
+サンプルとして載せてある情報、写真は全てその企業、個人共に許可を得ています。
 
-* System dependencies
+### サイトテーマ
+会社の採用活動、業務効率化のサポートをします。
 
-* Configuration
+### テーマを選んだ理由
+自分自身の前職が社員数10人程の小さな企業の一般社員で、業務は現場への営業派遣がメインでした。会社に経理、人事担当等はおらず社長、副社長自身がLINE等で共有した、された情報を元に各自で管理を行っている状況でした。また採用活動に関してもエージェントに任せて自社での取組みは特には行なっていませんでした。そこでこういったパッケージのサービスで同じような企業をサポートできればと思いつきました。また、自社の業績もたまに口頭で聞くぐらいであまり財務状況をイメージできていなかったので、社員の画面から常に確認できる事で、社内情報の透明化も狙えると考えました。
 
-* Database creation
+### ターゲットユーザ
+中小企業(既に類似した他サービスを利用している。経理、人事担当等が既に高効率化できている
+場合を除く。)
+### 主な利用シーン
+一般の方はその企業に興味を持った時、応募をしたい時。
+社員は企業内で決めたタイミングでのブログ投稿や、資料、業績の確認時。
+管理者は毎月の業績入力時、必要に応じたタイミングでのお知らせや資料送信時。
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/11Juit6QNpBTAybMH4WG6L8gR_fOj5gs52umUEl2diEg/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
