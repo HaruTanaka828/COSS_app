@@ -47,8 +47,6 @@
 
 管理者は毎月の業績入力時、必要に応じたタイミングでのお知らせや資料送信時。
 
-## 設計書
-
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/11Juit6QNpBTAybMH4WG6L8gR_fOj5gs52umUEl2diEg/edit?usp=sharing
 
