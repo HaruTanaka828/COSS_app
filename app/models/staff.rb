@@ -4,6 +4,11 @@ class Staff < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :documents, dependent: :destroy
+  has_many :blogs, dependent: :destroy
+
+  attachment :image
+
   validates :staff_number, presence: true, length: { is: 4 }
 
   validates :last_name, presence: true, length: {minimum: 1, maximum: 15}
@@ -21,9 +26,8 @@ class Staff < ApplicationRecord
 
   validates :accepted, presence: true
 
-  has_many :documents, dependent: :destroy
-  has_many :blogs, dependent: :destroy
-
-  attachment :image
+  def full_name
+    self.last_name + " " + self.first_name
+  end
 
 end

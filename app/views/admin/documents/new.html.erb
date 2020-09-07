@@ -1,4 +1,13 @@
-<h1>管理者資料作成画面</h1>
+<h3>ファイル送信</h3>
+
+<%= form_for(@document, url: admin_documents_path) do |f| %>
+
+<div>宛先<%= f.collection_select :staff_id, Staff.all, :id, :full_name, :prompt => "社員を選択" %></div>
+  <div>ファイル名<%= f.text_field :name %></div>
+  <div>ファイルURL<%= f.text_field :url %></div>
+  <div><%= f.submit '送信'%></div>
+
+<% end %>
 
 <%= link_to admin_root_path do %>
   <p><i class="fas fa-backward"></i> Back</p>

@@ -1,4 +1,4 @@
-<h2>お疲れ様です、<%= current_staff.last_name %> <%= current_staff.first_name %>さん。</h2>
+<h3><%= current_staff.full_name %>さん、お疲れ様です。</h3>
 
 <% @messages.last(1).each do |message| %>
  <p><%= message.body %></p>

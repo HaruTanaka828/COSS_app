@@ -1,68 +1,52 @@
 <%= image_tag attachment_url(@staff, :image, :fill, 100, 100, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %>
 
 <table>
-	<tr>
-		<th>社員番号</th>
-		<td>
-			<span><%= @staff.staff_number %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>役職</th>
-		<td>
-			<span><%= @staff.position %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>氏名</th>
-		<td>
-			<span><%= @staff.last_name %></span>
-			<span><%= @staff.first_name %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>カナ</th>
-		<td>
-			<span><%= @staff.last_name_kana %></span>
-			<span><%= @staff.first_name_kana %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>郵便番号</th>
-		<td>
-			<span><%= @staff.post_code %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>住所</th>
-		<td>
-			<span><%= @staff.address %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>電話番号</th>
-		<td>
-			<span><%= @staff.phone_number %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>メールアドレス</th>
-		<td>
-			<span><%= @staff.email %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>緊急連絡先(続柄)</th>
-		<td>
-			<span><%= @staff.emergency_relationship %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>緊急連絡先(番号)</th>
-		<td>
-			<span><%= @staff.emergency_number %></span>
-		</td>
-	</tr>
+  <tr>
+    <th>社員番号</th>
+	<td><span><%= @staff.staff_number %></span></td>
+  </tr>
+  <tr>
+    <th>役職</th>
+	<td><span><%= @staff.position %></span></td>
+  </tr>
+  <tr>
+    <th>氏名</th>
+	<td>
+	  <span><%= @staff.last_name %></span>
+	  <span><%= @staff.first_name %></span>
+	</td>
+  </tr>
+  <tr>
+    <th>カナ</th>
+	<td>
+	  <span><%= @staff.last_name_kana %></span>
+	  <span><%= @staff.first_name_kana %></span>
+	</td>
+  </tr>
+  <tr>
+    <th>郵便番号</th>
+	<td><span><%= @staff.post_code %></span></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+	<td><span><%= @staff.address %></span></td>
+  </tr>
+  <tr>
+    <th>電話番号</th>
+	<td><span><%= @staff.phone_number %></span></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+	<td><span><%= @staff.email %></span></td>
+  </tr>
+  <tr>
+    <th>緊急連絡先(続柄)</th>
+	<td><span><%= @staff.emergency_relationship %></span></td>
+  </tr>
+  <tr>
+    <th>緊急連絡先(番号)</th>
+	<td><span><%= @staff.emergency_number %></span></td>
+  </tr>
 </table>
 
 <%= link_to "社員情報を削除", admin_staff_path, method: :delete, data: { confirm: '本当に削除しますか？(この社員に関する情報、投稿したブログは全て削除されます。)' }%>

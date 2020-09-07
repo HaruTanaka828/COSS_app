@@ -1,23 +1,18 @@
 
 <%= image_tag attachment_url(@blog.staff, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %>
   <span><%= @blog.staff.position %></span>
-  <span><%= @blog.staff.last_name %></span>
-  <span><%= @blog.staff.first_name %></span>
+  <span><%= @blog.staff.full_name %></span>
 
 <div>
-<%= image_tag attachment_url(@blog, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg") %>
+  <%= image_tag attachment_url(@blog, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg") %>
 </div>
 <table>
-	<tr>
-		<th>タイトル</th>
-		<td>
-			<span><%= @blog.title %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>内容</th>
-		<td>
-			<span><%= @blog.body %></span>
-		</td>
-	</tr>
+  <tr>
+    <th>タイトル</th>
+	<td><span><%= @blog.title %></span></td>
+  </tr>
+  <tr>
+    <th>内容</th>
+	<td><span><%= @blog.body %></span></td>
+  </tr>
 </table>

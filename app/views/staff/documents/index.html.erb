@@ -1,4 +1,23 @@
-<h1>社員資料確認画面</h1>
+<h3>受信ファイル確認</h3>
+
+<table>
+  <thead>
+    <tr>
+	  <th>ファイル名</th>
+	  <th>URL</th>
+	  <th>受信日</th>
+	</tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |document| %>
+	<tr>
+	  <td><%= document.name %></td>
+	  <td><%= document.url %></td>
+	  <td><%= document.created_at.strftime('%Y/%m/%d %H:%M')%></td>
+	</tr>
+	<% end %>
+  </tbody>
+</table>
 
 <%= link_to staff_root_path do %>
   <p><i class="fas fa-backward"></i> Back</p>

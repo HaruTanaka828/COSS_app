@@ -12,29 +12,20 @@
 <h3>最新のブログ</h3>
 
 <% @blogs.last(1).each do |blog| %>
-
-<%= image_tag attachment_url(blog, :image, :fill, 300, 300, format: "jpg",fallback: "no_image.jpg") %>
-
+  <%= image_tag attachment_url(blog, :image, :fill, 200, 200, format: "jpg",fallback: "no_image.jpg") %>
 <table>
-	<tr>
-		<th>投稿者</th>
-		<td>
-			<span><%= blog.staff.last_name %></span>
-			<span><%= blog.staff.first_name %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>タイトル</th>
-		<td>
-			<span><%= blog.title %></span>
-		</td>
-	</tr>
-	<tr>
-		<th>内容</th>
-		<td>
-			<span><%= blog.body %></span>
-		</td>
-	</tr>
+  <tr>
+    <th>投稿者</th>
+	  <td><span><%= blog.staff.full_name %></span></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+	  <td><span><%= blog.title %></span></td>
+  </tr>
+  <tr>
+    <th>内容</th>
+	  <td><span><%= blog.body %></span></td>
+  </tr>
 </table>
 
 <% end %>

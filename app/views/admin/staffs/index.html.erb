@@ -1,19 +1,17 @@
-<h2>社員一覧</h2>
+<h3>社員一覧</h3>
 
 <table>
-
-	<% @staffs.each do |staff| %>
-		<tr>
-			<td><%= image_tag attachment_url(staff, :image, :fill, 100, 100, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %></td>
-			<td>
-				<%= link_to admin_staff_path(staff.id) do %>
-					<%= staff.last_name %>
-					<%= staff.first_name %>
-				<% end %>
-			</td>
-			<td><%= staff.position %></td>
-		</tr>
-	<% end %>
+  <% @staffs.each do |staff| %>
+    <tr>
+	  <td><%= image_tag attachment_url(staff, :image, :fill, 100, 100, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %></td>
+	  <td>
+	    <%= link_to admin_staff_path(staff.id) do %>
+		  <%= staff.last_name %><%= staff.first_name %>
+		<% end %>
+	  </td>
+	  <td><%= staff.position %></td>
+	</tr>
+  <% end %>
 </table>
 
 <%= link_to admin_root_path do %>
