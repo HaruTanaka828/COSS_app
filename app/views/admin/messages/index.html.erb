@@ -1,0 +1,23 @@
+<h2>お疲れ様です。</h2>
+
+<% @messages.last(1).each do |message| %>
+ <p><%= message.body %></p>
+<% end %>
+
+<p><i class="far fa-address-card"></i> <%= link_to "社員一覧", admin_staffs_path %></p>
+
+<p><i class="far fa-copy"></i> <%= link_to "社員へ資料送信", new_admin_document_path %></p>
+
+<p><i class="fas fa-chart-line"></i> <%= link_to "業績入力", new_admin_result_path %></p>
+
+<p><i class="fas fa-book"></i> <%= link_to "ブログの確認・削除", admin_blogs_path %></p>
+
+<h3>お知らせを更新する</h3>
+
+<%= form_for(@message, url: '/admin') do |f| %>
+  <%= f.text_area :body %>
+  <%= f.submit '更新' %>
+<% end %>
+
+<br>
+<p><%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %></p>

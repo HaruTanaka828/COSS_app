@@ -1,1 +1,16 @@
-<h1>社員トップ画面</h1>
+<h2>お疲れ様です、<%= current_staff.last_name %> <%= current_staff.first_name %>さん。</h2>
+
+<% @messages.last(1).each do |message| %>
+ <p><%= message.body %></p>
+<% end %>
+
+<p><i class="far fa-address-card"></i> <%= link_to "情報編集・写真登録", staff_edit_path %></p>
+
+<p><i class="far fa-copy"></i> <%= link_to "受信資料の確認", staff_documents_path %></p>
+
+<p><i class="fas fa-chart-line"></i> <%= link_to "業績の確認", staff_results_path %></p>
+
+<p><i class="fas fa-book"></i> <%= link_to "ブログの新規投稿", new_staff_blog_path %></p>
+
+<br>
+<p><%= link_to "社員ログアウト", destroy_staff_session_path, method: :delete %></p>

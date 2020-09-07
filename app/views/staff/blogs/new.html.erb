@@ -1,1 +1,44 @@
-<h1>社員ブログ投稿画面</h1>
+<h3>公開ブログ新規投稿</h3>
+
+<%= form_for(@blog, url: staff_blogs_path) do |f| %>
+
+  <div><%= f.attachment_field :image %></div>
+  <div><%= f.text_field :title %></div>
+  <div><%= f.text_area :body %></div>
+  <div><%= f.submit '投稿', data: { confirm: 'この内容で投稿しますか？(投稿したブログの削除は管理者しか行えません。)' }%></div>
+
+<% end %>
+
+<h3>最新のブログ</h3>
+
+<% @blogs.last(1).each do |blog| %>
+
+<%= image_tag attachment_url(blog, :image, :fill, 300, 300, format: "jpg",fallback: "no_image.jpg") %>
+
+<table>
+	<tr>
+		<th>投稿者</th>
+		<td>
+			<span><%= blog.staff.last_name %></span>
+			<span><%= blog.staff.first_name %></span>
+		</td>
+	</tr>
+	<tr>
+		<th>タイトル</th>
+		<td>
+			<span><%= blog.title %></span>
+		</td>
+	</tr>
+	<tr>
+		<th>内容</th>
+		<td>
+			<span><%= blog.body %></span>
+		</td>
+	</tr>
+</table>
+
+<% end %>
+
+<%= link_to staff_root_path do %>
+  <p><i class="fas fa-backward"></i> Back</p>
+<% end %>
