@@ -3,16 +3,14 @@
 <table>
   <thead>
     <tr>
-	  <th>ファイル名</th>
-	  <th>URL</th>
-	  <th>受信日</th>
+	  <th>ファイル</th>
+	  <th>受信日時</th>
 	</tr>
   </thead>
   <tbody>
     <% @documents.each do |document| %>
 	<tr>
-	  <td><%= document.name %></td>
-	  <td><%= document.url %></td>
+	  <td><%= link_to document.name, rails_blob_path(document.file) %></td>
 	  <td><%= document.created_at.strftime('%Y/%m/%d %H:%M')%></td>
 	</tr>
 	<% end %>

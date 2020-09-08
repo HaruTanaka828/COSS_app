@@ -4,7 +4,8 @@
 
 <div>宛先<%= f.collection_select :staff_id, Staff.all, :id, :full_name, :prompt => "社員を選択" %></div>
   <div>ファイル名<%= f.text_field :name %></div>
-  <div>ファイルURL<%= f.text_field :url %></div>
+  <div><%= f.file_field :file %></div>
+
   <div><%= f.submit '送信'%></div>
 
 <% end %>
