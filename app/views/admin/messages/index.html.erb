@@ -1,31 +1,39 @@
-<h3>管理人さん、お疲れ様です。</h3>
 
+<div class="work-top">　管理者専用<span>TOP</span></div>
+
+<h3 class="center">管理人さん、お疲れ様です。<span><%= Date.current.strftime('%Y年%m月%d日') %></span></h3>
+
+<div class="scroll">
   <% @messages.last(1).each do |message| %>
-    <p><%= message.body %></p>
+    <span><%= message.body %></span>
   <% end %>
+</div><br>
 
-  <p>
-    <i class="far fa-address-card"></i> <%= link_to "社員一覧", admin_staffs_path %>
-  </p>
+  <div class="center work-lists">
 
-  <p>
-  	<i class="far fa-copy"></i> <%= link_to "ファイル送信", new_admin_document_path %>
-  </p>
+    <div>
+      <i class="far fa-copy"></i> <%= link_to "ファイル送信", new_admin_document_path, {class: "work-list"}%>
+    </div><br>
+    <div>
+  	  <i class="far fa-address-card"></i> <%= link_to "社員情報確認", admin_staffs_path, {class: "work-list"}%>
+    </div><br>
+    <div>
+  	  <i class="fas fa-chart-line"></i> <%= link_to "業績確認・入力", admin_achievements_path, {class: "work-list"} %>
+    </div><br>
+    <div>
+  	  <i class="fas fa-book"></i> <%= link_to "ブログ確認・削除", admin_blogs_path, {class: "work-list"} %>
+    </div><br>
 
-  <p>
-  	<i class="fas fa-chart-line"></i> <%= link_to "業績入力", new_admin_result_path %>
-  </p>
+  </div>
 
-  <p>
-  	<i class="fas fa-book"></i> <%= link_to "ブログの確認・削除", admin_blogs_path %>
-  </p>
+<br>
+<h4 class="center">お知らせを変更する</h4>
 
-<h4>全体へのお知らせを更新する</h4>
-
+<div class="center">
   <%= form_for(@message, url: '/admin') do |f| %>
-    <%= f.text_area :body %>
-    <%= f.submit '更新' %>
+    <%= f.text_area :body, placeholder: "内容", autofocus: true %>
+    <div>
+    <%= f.submit '変更',class:"btn btn-danger" %>
+  </div>
   <% end %>
-
-  <br>
-  <p><%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %></p>
+</div>

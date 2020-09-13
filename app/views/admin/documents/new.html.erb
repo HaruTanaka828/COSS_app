@@ -1,15 +1,25 @@
-<h3>ファイル送信</h3>
+<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> ファイル送信</span></div>
+
+<div class="container file">
+ <div class="row">
+  <div class="col-xs-4">
+  </div>
+  <div class="col-xs-4">
 
 <%= form_for(@document, url: admin_documents_path) do |f| %>
 
-<div>宛先<%= f.collection_select :staff_id, Staff.all, :id, :full_name, :prompt => "社員を選択" %></div>
-  <div>ファイル名<%= f.text_field :name %></div>
-  <div><%= f.file_field :file %></div>
+  <div>　 <span class="file-text">宛先</span>　　　<%= f.collection_select :staff_id, Staff.all, :id, :full_name, :prompt => "社員を選択" %></div><br>
+  <div><span class="file-text">ファイル名</span>　<%= f.text_field :name,placeholder: "名前" %></div><br>
+  <div><%= f.file_field :file %></div><br>
 
-  <div><%= f.submit '送信'%></div>
+  <div><%= f.submit '送信',class:"btn btn-sm btn-block btn-success"%></div><br>
 
 <% end %>
 
 <%= link_to admin_root_path do %>
   <p><i class="fas fa-backward"></i> Back</p>
 <% end %>
+
+    </div>
+  </div>
+</div>

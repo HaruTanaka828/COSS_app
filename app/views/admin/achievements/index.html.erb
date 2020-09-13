@@ -1,0 +1,74 @@
+<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> 業績参照</span></div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-8">
+
+<table>
+  <tr>
+    <th>年度別一覧：</th>
+      <td>
+        <% @ads.each do |ad| %>
+          <%= link_to( ad.year, admin_achievements_path(ad_id: ad.id)) %>年度
+        <% end %>
+      </td>
+    </tr>
+</table><hr>
+
+<% if params[:ad_id].present? %>
+  <h3><%= @achievement_find.ad.year %>年度</h3>
+
+<%= line_chart @achievements.pluck(:month, :profit), width: "100%", height: "400px",colors: ["#FFA500"], messages: {empty: "No data"}%>
+
+<table class="table table-bordered">
+  <tr>
+    <th>月</th>
+    <% @achievements.each do |achievement| %>
+	  <td><%= achievement.month %></td>
+	<% end %>
+  </tr>
+  <tr>
+    <th>利益(万円)</th>
+    <% @achievements.each do |achievement| %>
+	  <td><%= achievement.profit %></td>
+	<% end %>
+  </tr>
+</table>
+
+<% else %>
+  <p>業績を参照したい年を選択してください。</p>
+<% end %>
+
+<hr>
+
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-4">
+
+<h3>業績を追加</h3>
+
+<%= form_with model:@achievement, url: admin_achievements_path do |f| %>
+  <div>
+  	<%= f.collection_select :ad_id, Ad.all, :id, :year, :prompt => "西暦を選択" %> 年度
+  	<%= link_to "西暦を追加", admin_ads_path %>
+  </div><br>
+  <div>
+  	<%= f.select :month, [[4, "４月"], [5, "５月"], [6, "６月"], [7, "７月"], [8, "８月"], [9, "９月"], [10, "１０月"], [11, "１１月"], [12, "１２月"], [1, "１月"], [2, "２月"], [3, "３月"]], :prompt => "月を選択" %> 月
+  </div><br>
+  <div><%= f.text_field :profit %> 万円</div><br>
+  <div><%= f.submit "追加" ,class:"btn btn-success btn-block"%></div><br>
+<% end %>
+
+<%= link_to admin_root_path do %>
+  <p><i class="fas fa-backward"></i> Back</p>
+<% end %>
+
+    </div>
+  </div>
+
+    </div>
+  </div>
+</div>

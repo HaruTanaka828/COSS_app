@@ -1,0 +1,35 @@
+<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> <%= link_to "業績一覧", admin_achievements_path%> >> 西暦の追加</span></div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-3">
+
+<table class="table">
+  <thead>
+    <tr>
+	  <th>現在の年度一覧</th>
+	</tr>
+  </thead>
+  <tbody>
+	<% @ads.each do |ad| %>
+	<tr>
+      <td><%= ad.year %>年度(4月-3月)</td>
+	</tr>
+	<% end %>
+  </tbody>
+</table>
+
+<%= form_with model:@ad, url: admin_ads_path do |f| %>
+  <div><%= f.text_field :year, placeholder: "4桁で入力", autofocus: true %>年度</div><br>
+  <div><%= f.submit "追加" ,class:"btn btn-sm btn-success btn-block" %></div><br>
+<% end %>
+
+<%= link_to admin_achievements_path do %>
+  <p><i class="fas fa-backward"></i> Back</p>
+<% end %>
+
+    </div>
+  </div>
+</div>

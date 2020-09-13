@@ -9,7 +9,42 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<header>
+
+<% if admin_signed_in? %>
+
+    <nav class="navbar navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
+        </div>
+            <p class="navbar-text navbar-right"><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></p>
+      </div>
+    </nav>
+
+<% end %>
+
+</header>
+
+<body>
+
     <%= yield %>
-  </body>
+
+
+<footer>
+  <div class="footer-left">
+    <a class="insta" href="#"><i class="fab fa-instagram"></i></a>
+    <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+    <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="footer-right">
+    <p>株式会社Lifes.</p>
+    <p>大阪府大阪市北区天満2-8-17天満橋パークビル4階</p>
+    <p>TEL：06-7182-2493</p>
+  </div>
+
+</footer>
+
+</body>
+
 </html>

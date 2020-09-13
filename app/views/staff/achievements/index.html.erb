@@ -1,0 +1,36 @@
+<h3>業績確認</h3>
+
+<table>
+  <tr>
+    <th>年度別一覧</th>
+      <td>
+        <% @ads.each do |ad| %>
+          <%= link_to( ad.year, staff_achievements_path(ad_id: ad.id)) %>年
+        <% end %>
+      </td>
+    </tr>
+</table>
+
+<% if params[:ad_id].present? %>
+  <h3><%= @achievement_find.ad.year %>年度</h3>
+
+<%= line_chart @achievements.pluck(:month, :profit), width: "700px", height: "400px",colors: ['#b00']%>
+
+<table border="1">
+  <tr>
+    <th>月</th>
+    <% @achievements.each do |achievement| %>
+	  <td><%= achievement.month %></td>
+	<% end %>
+  </tr>
+  <tr>
+    <th>利益</th>
+    <% @achievements.each do |achievement| %>
+	  <td><%= achievement.profit %>万</td>
+	<% end %>
+  </tr>
+</table>
+
+<% else %>
+  <p>業績を参照したい年を選択してください。</p>
+<% end %>

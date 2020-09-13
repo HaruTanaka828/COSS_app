@@ -1,6 +1,16 @@
-<%= image_tag attachment_url(@staff, :image, :fill, 100, 100, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %>
+<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> <%= link_to "社員一覧", admin_staffs_path%> >> 社員情報詳細・削除</span></div><br>
 
-<table>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
+
+<table class="table">
+  <tr>
+  <th>登録写真</th>
+  <td><span><%= image_tag attachment_url(@staff, :image, :fill, 100, 100, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %></span></td>
+  </tr>
   <tr>
     <th>社員番号</th>
 	<td><span><%= @staff.staff_number %></span></td>
@@ -12,8 +22,7 @@
   <tr>
     <th>氏名</th>
 	<td>
-	  <span><%= @staff.last_name %></span>
-	  <span><%= @staff.first_name %></span>
+	  <span><%= @staff.full_name %></span>
 	</td>
   </tr>
   <tr>
@@ -49,8 +58,13 @@
   </tr>
 </table>
 
-<%= link_to "社員情報を削除", admin_staff_path, method: :delete, data: { confirm: '本当に削除しますか？(この社員に関する情報、投稿したブログは全て削除されます。)' }%>
-
 <%= link_to admin_staffs_path do %>
   <p><i class="fas fa-backward"></i> Back</p>
 <% end %>
+
+<div class="right">
+  <%= link_to "社員情報を削除", admin_staff_path, method: :delete, data: { confirm: '本当に削除しますか？(この社員に関する情報、投稿したブログは全て削除されます。)'}, class: 'btn btn-danger'%>
+</div>
+    </div>
+  </div>
+</div>

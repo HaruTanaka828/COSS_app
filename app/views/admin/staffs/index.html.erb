@@ -1,19 +1,27 @@
-<h3>社員一覧</h3>
+<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> 社員一覧</span></div><br>
 
-<table>
-  <% @staffs.each do |staff| %>
-    <tr>
-	  <td><%= image_tag attachment_url(staff, :image, :fill, 100, 100, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %></td>
-	  <td>
-	    <%= link_to admin_staff_path(staff.id) do %>
-		  <%= staff.last_name %><%= staff.first_name %>
-		<% end %>
-	  </td>
-	  <td><%= staff.position %></td>
-	</tr>
-  <% end %>
-</table>
+<div class="container staffs"><hr>
+  <div class="row">
 
-<%= link_to admin_root_path do %>
-  <p><i class="fas fa-backward"></i> Back</p>
-<% end %>
+  	<% @staffs.each do |staff| %>
+      <div class="col-xs-4">
+	    <span>
+	  	  <%= image_tag attachment_url(staff, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %>
+	    </span>
+	    <span>
+	      <%= link_to admin_staff_path(staff.id) do %>
+	      <%= staff.full_name %>
+	      <% end %>
+	    </span>
+	    <span>
+	      <%= staff.position %>
+	    </span><hr>
+      </div>
+    <% end %>
+
+      <%= link_to admin_root_path do %>
+      <p><i class="fas fa-backward"></i> Back</p>
+      <% end %>
+
+  </div>
+</div>
