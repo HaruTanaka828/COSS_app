@@ -1,4 +1,6 @@
-<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> 業績参照</span></div><br>
+<div class="work-top">
+　管理者専用<span><%= link_to "TOP", admin_root_path%> >> 業績参照・入力</span>
+</div><br>
 
 <div class="container">
   <div class="row">
@@ -43,12 +45,13 @@
 
 <hr>
 
+    </div>
   <div class="row">
     <div class="col-xs-4">
     </div>
     <div class="col-xs-4">
 
-<h3>業績を追加</h3>
+<h3>業績を追加</h3><br>
 
 <%= form_with model:@achievement, url: admin_achievements_path do |f| %>
   <div>
@@ -59,7 +62,7 @@
   	<%= f.select :month, [[4, "４月"], [5, "５月"], [6, "６月"], [7, "７月"], [8, "８月"], [9, "９月"], [10, "１０月"], [11, "１１月"], [12, "１２月"], [1, "１月"], [2, "２月"], [3, "３月"]], :prompt => "月を選択" %> 月
   </div><br>
   <div><%= f.text_field :profit %> 万円</div><br>
-  <div><%= f.submit "追加" ,class:"btn btn-success btn-block"%></div><br>
+  <div><%= f.submit "追加" ,class:"btn btn-success btn-block btn-sm"%></div><br>
 <% end %>
 
 <%= link_to admin_root_path do %>

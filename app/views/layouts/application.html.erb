@@ -18,7 +18,32 @@
         <div class="navbar-header">
           <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
         </div>
-            <p class="navbar-text navbar-right"><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></p>
+        <p class="navbar-text navbar-right">
+          <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+        </p>
+      </div>
+    </nav>
+
+<% elsif staff_signed_in? %>
+
+    <nav class="navbar navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
+        </div>
+        <p class="navbar-text navbar-right">
+          <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
+        </p>
+      </div>
+    </nav>
+
+<% else %>
+
+    <nav class="navbar navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
+        </div>
       </div>
     </nav>
 

@@ -1,16 +1,26 @@
-<h3><%= current_staff.full_name %>さん、お疲れ様です。</h3>
+<div class="work-top">　社員専用<span>　TOP</span></div>
 
-<% @messages.last(1).each do |message| %>
- <p><%= message.body %></p>
-<% end %>
+<h3 class="center"><%= current_staff.full_name %>さん、お疲れ様です。<span><%= Date.current.strftime('%Y年%m月%d日') %></span></h3>
 
-<p><i class="far fa-address-card"></i> <%= link_to "情報編集・写真登録", staff_edit_path %></p>
+<div class="scroll">
+  <% @messages.last(1).each do |message| %>
+    <span><%= message.body %></span>
+  <% end %>
+</div><br>
 
-<p><i class="far fa-copy"></i> <%= link_to "受信資料の確認", staff_documents_path %></p>
+<div class="center work-lists">
 
-<p><i class="fas fa-chart-line"></i> <%= link_to "業績の確認", staff_achievements_path %></p>
+  <div>
+    <i class="far fa-address-card"></i> <%= link_to "情報編集・写真登録", staff_edit_path, {class: "work-list"}%>
+  </div><br>
+  <div>
+  	<i class="far fa-copy"></i> <%= link_to "受信資料の確認", staff_documents_path, {class: "work-list"}%>
+  </div><br>
+  <div>
+  	<i class="fas fa-chart-line"></i> <%= link_to "業績の確認", staff_achievements_path, {class: "work-list"} %>
+  </div><br>
+  <div>
+  	<i class="fas fa-book"></i> <%= link_to "ブログの新規投稿", new_staff_blog_path, {class: "work-list"} %>
+  </div><br>
 
-<p><i class="fas fa-book"></i> <%= link_to "ブログの新規投稿", new_staff_blog_path %></p>
-
-<br>
-<p><%= link_to "社員ログアウト", destroy_staff_session_path, method: :delete %></p>
+</div>

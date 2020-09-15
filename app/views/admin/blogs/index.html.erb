@@ -1,24 +1,36 @@
-<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> ブログ一覧</span></div>
+<div class="work-top">
+　管理者専用<span><%= link_to "TOP", admin_root_path%> >> ブログ一覧(新着順)</span>
+</div><br>
 
-<table>
-  <thead>
-    <tr>
-	  <th>投稿者</th>
-	  <th>タイトル</th>
-	  <th>投稿日時</th>
-	</tr>
-  </thead>
-  <tbody>
-    <% @blogs.each do |blog| %>
-	<tr>
-	  <td><%= blog.staff.full_name %></td>
-	  <td><%= link_to blog.title, admin_blog_path(blog.id) %></td>
-	  <td><%= blog.created_at.strftime('%Y/%m/%d %H:%M')%></td>
-	</tr>
-	<% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+	        <th>投稿者</th>
+	        <th>タイトル</th>
+	        <th>投稿日時</th>
+	      </tr>
+        </thead>
+        <tbody>
+        <% @blogs.each do |blog| %>
+	      <tr>
+	        <td><%= blog.staff.full_name %></td>
+	        <td><%= link_to blog.title, admin_blog_path(blog.id) %></td>
+	        <td><%= blog.created_at.strftime('%Y/%m/%d %H:%M')%></td>
+	      </tr>
+	    <% end %>
+        </tbody>
+      </table>
 
 <%= link_to admin_root_path do %>
   <p><i class="fas fa-backward"></i> Back</p>
 <% end %>
+
+    </div>
+  </div>
+</div>

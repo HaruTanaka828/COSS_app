@@ -1,10 +1,15 @@
-<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> 社員一覧</span></div><br>
+<div class="work-top">
+　管理者専用<span><%= link_to "TOP", admin_root_path%> >> 社員一覧</span>
+</div><br>
 
 <div class="container staffs"><hr>
   <div class="row">
 
   	<% @staffs.each do |staff| %>
       <div class="col-xs-4">
+	    <div class="staffs-text">
+	      <%= staff.position %>
+	    </div>
 	    <span>
 	  	  <%= image_tag attachment_url(staff, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %>
 	    </span>
@@ -12,9 +17,6 @@
 	      <%= link_to admin_staff_path(staff.id) do %>
 	      <%= staff.full_name %>
 	      <% end %>
-	    </span>
-	    <span>
-	      <%= staff.position %>
 	    </span><hr>
       </div>
     <% end %>

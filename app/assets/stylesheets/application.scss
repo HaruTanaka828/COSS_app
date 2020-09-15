@@ -33,6 +33,9 @@ body{
 .right{
 	text-align: right;
 }
+.left{
+	float:left;
+}
 .center span{
 	font-size: 15px;
 }
@@ -66,6 +69,7 @@ body{
 header{
 	height:60px;
 	line-height:40px;
+	background-color:rgba(255,255,255,0.5);
 }
 
 footer{
@@ -128,8 +132,23 @@ footer{
 .staffs span{
 	font-size: 17px;
 }
+.staffs-text{
+	font-size:  17px;
+	margin-left: 10px;
+	font-weight: bold;
+}
 
 
 // ----------------------------------------------------
 
+// トップ画面 --------------------------------------------
+
+
+.video-content{
+	margin-top:-170px;
+	height:1000px;
+	width:100%;
+}
+
+// ----------------------------------------------------
 

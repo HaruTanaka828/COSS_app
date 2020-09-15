@@ -1,35 +1,72 @@
-<h3>公開ブログ新規投稿</h3>
+<div class="work-top">
+　社員専用<span><%= link_to "　TOP", staff_root_path%> >> ブログ新規投稿</span>
+</div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
 
 <%= form_for(@blog, url: staff_blogs_path) do |f| %>
+<table class="table">
 
-  <div><%= f.attachment_field :image %></div>
-  <div><%= f.text_field :title %></div>
-  <div><%= f.text_area :body %></div>
-  <div><%= f.submit '投稿', data: { confirm: 'この内容で投稿しますか？(投稿したブログの削除は管理者しか行えません。)' }%></div>
-
-<% end %>
-
-<h3>最新のブログ</h3>
-
-<% @blogs.last(1).each do |blog| %>
-  <%= image_tag attachment_url(blog, :image, :fill, 200, 200, format: "jpg",fallback: "no_image.jpg") %>
-<table>
   <tr>
-    <th>投稿者</th>
-	  <td><span><%= blog.staff.full_name %></span></td>
+    <th><span>投稿写真</span></th>
+    <td><%= f.attachment_field :image %></td>
   </tr>
   <tr>
     <th>タイトル</th>
-	  <td><span><%= blog.title %></span></td>
+    <td><span><%= f.text_field :title, placeholder:"タイトル"%></span></td>
   </tr>
   <tr>
-    <th>内容</th>
-	  <td><span><%= blog.body %></span></td>
+    <th>本文</th>
+    <td><span><%= f.text_area :body, placeholder: "本文",:size=>"48" %></span></td>
   </tr>
-</table>
 
+</table>
+<div>
+  <%= f.submit '投稿', data: { confirm: 'この内容で投稿しますか？(投稿したブログの削除は管理者しか行えません。)' }%>
+</div>
 <% end %>
 
+
+
+
+<h3>最新のブログ</h3>
+<% @blogs.last(1).each do |blog| %>
+
+      <div class="left"><%= image_tag attachment_url(blog.staff, :image, :fill, 80, 80, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %></div><br>
+      <div class="blog-text"><%= blog.created_at.strftime('%Y/%m/%d')%></div>
+      <div><%= blog.staff.full_name %>(<%= blog.staff.position %>)</div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-6">
+      <br>
+      <table class="table">
+        <tr>
+          <td><span><%= blog.title %></span></td>
+        </tr>
+        <tr>
+          <td><span><%= blog.body %></span></td>
+        </tr>
+      </table>
+
+      <div>
+      <%= image_tag attachment_url(blog, :image, :fill, 550, 413, format: "jpg",fallback: "no_image.jpg") %>
+      </div><br>
+
+<% end %>
 <%= link_to staff_root_path do %>
   <p><i class="fas fa-backward"></i> Back</p>
 <% end %>
+
+    </div>
+  </div>
+</div>

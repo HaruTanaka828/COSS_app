@@ -1,26 +1,45 @@
-<div class="work-top">　管理者専用<span><%= link_to "TOP", admin_root_path%> >> <%= link_to "ブログ一覧", admin_blogs_path%> >> ブログ詳細・削除</span></div>
+<div class="work-top">
+　管理者専用<span><%= link_to "TOP", admin_root_path%> >> <%= link_to "ブログ一覧", admin_blogs_path%> >> ブログ詳細・削除</span>
+</div><br>
 
-<%= image_tag attachment_url(@blog.staff, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %>
-  <span><%= @blog.staff.position %></span>
-  <span><%= @blog.staff.full_name %></span>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
 
-<div>
-  <%= image_tag attachment_url(@blog, :image, :fill, 150, 150, format: "jpg",fallback: "no_image.jpg") %>
-</div>
+      <div class="left"><%= image_tag attachment_url(@blog.staff, :image, :fill, 80, 80, format: "jpg",fallback: "no_image.jpg"),class: 'staff-image' %></div><br>
+      <div class="blog-text"><%= @blog.created_at.strftime('%Y/%m/%d')%></div>
+      <div><%= @blog.staff.full_name %>(<%= @blog.staff.position %>)</div>
 
-<table>
-  <tr>
-    <th>タイトル</th>
-	<td><span><%= @blog.title %></span></td>
-  </tr>
-  <tr>
-    <th>内容</th>
-	<td><span><%= @blog.body %></span></td>
-  </tr>
-</table>
+    </div>
+  </div>
 
-<%= link_to "この記事を削除", admin_blog_path, method: :delete, data: { confirm: '本当に削除しますか？(この操作は取り消せません)' }%>
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-6">
+      <br>
+      <table class="table">
+        <tr>
+          <td><span><%= @blog.title %></span></td>
+        </tr>
+        <tr>
+          <td><span><%= @blog.body %></span></td>
+        </tr>
+      </table>
+
+      <div>
+      <%= image_tag attachment_url(@blog, :image, :fill, 550, 413, format: "jpg",fallback: "no_image.jpg") %>
+      </div><br>
+
+<div class="right"><%= link_to "この記事を削除", admin_blog_path, method: :delete, data: { confirm: '本当に削除しますか？(この操作は取り消せません)' }, class: 'btn btn-sm btn-danger'%></div>
 
 <%= link_to admin_blogs_path do %>
   <p><i class="fas fa-backward"></i> Back</p>
 <% end %>
+
+    </div>
+  </div>
+</div>

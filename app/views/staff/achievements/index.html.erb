@@ -1,36 +1,52 @@
-<h3>業績確認</h3>
+<div class="work-top">
+　社員専用<span><%= link_to "　TOP", staff_root_path%> >> 業績参照</span>
+</div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-8">
 
 <table>
   <tr>
-    <th>年度別一覧</th>
+    <th>年度別一覧：</th>
       <td>
         <% @ads.each do |ad| %>
-          <%= link_to( ad.year, staff_achievements_path(ad_id: ad.id)) %>年
+          <%= link_to( ad.year, staff_achievements_path(ad_id: ad.id)) %>年度
         <% end %>
       </td>
     </tr>
-</table>
+</table><hr>
 
 <% if params[:ad_id].present? %>
   <h3><%= @achievement_find.ad.year %>年度</h3>
 
-<%= line_chart @achievements.pluck(:month, :profit), width: "700px", height: "400px",colors: ['#b00']%>
+<%= line_chart @achievements.pluck(:month, :profit), width: "100%", height: "400px",colors: ["#FFA500"], messages: {empty: "No data"}%>
 
-<table border="1">
+<table class="table table-bordered">
   <tr>
     <th>月</th>
     <% @achievements.each do |achievement| %>
-	  <td><%= achievement.month %></td>
-	<% end %>
+    <td><%= achievement.month %></td>
+  <% end %>
   </tr>
   <tr>
-    <th>利益</th>
+    <th>利益(万円)</th>
     <% @achievements.each do |achievement| %>
-	  <td><%= achievement.profit %>万</td>
-	<% end %>
+    <td><%= achievement.profit %></td>
+  <% end %>
   </tr>
 </table>
 
 <% else %>
   <p>業績を参照したい年を選択してください。</p>
 <% end %>
+
+<%= link_to staff_root_path do %>
+  <p><i class="fas fa-backward"></i> Back</p>
+<% end %>
+
+    </div>
+  </div>
+</div>
