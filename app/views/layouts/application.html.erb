@@ -4,57 +4,41 @@
     <title>COSSApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<header>
-
 <% if admin_signed_in? %>
-
-    <nav class="navbar navbar-static-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
-        </div>
-        <p class="navbar-text navbar-right">
-          <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-        </p>
+<header>
+  <nav class="navbar navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
       </div>
-    </nav>
-
-<% elsif staff_signed_in? %>
-
-    <nav class="navbar navbar-static-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
-        </div>
-        <p class="navbar-text navbar-right">
-          <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
-        </p>
-      </div>
-    </nav>
-
-<% else %>
-
-    <nav class="navbar navbar-static-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
-        </div>
-      </div>
-    </nav>
-
-<% end %>
-
+      <p class="navbar-text navbar-right">
+        <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+      </p>
+    </div>
+  </nav>
 </header>
+<% elsif staff_signed_in? %>
+<header>
+  <nav class="navbar navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
+      </div>
+      <p class="navbar-text navbar-right">
+        <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
+      </p>
+    </div>
+  </nav>
+</header>
+<% end %>
 
 <body>
 
     <%= yield %>
-
 
 <footer>
   <div class="footer-left">
@@ -67,7 +51,6 @@
     <p>大阪府大阪市北区天満2-8-17天満橋パークビル4階</p>
     <p>TEL：06-7182-2493</p>
   </div>
-
 </footer>
 
 </body>

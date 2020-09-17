@@ -1,14 +1,77 @@
-<h3>応募フォーム</h3>
+<%= render '/header' %>
 
-<%= form_with model:@contact do |f| %>
+<div class="about">
+  <div class="work-top">
+　  <span>採用・お問い合わせ</span>
+  </div>
 
-  <div>お名前</div>
-  <div><%= f.text_field :name %></div>
-  <div>内容</div>
-  <div><%= f.text_area :body %></div>
-  <div><%= f.submit "送信"%></div>
-  <div>採用応募の方は上記内容欄に<br>
-  	①メールアドレス<br>②連絡先電話番号<br>③正社員希望またはアルバイト希望での応募<br>
-  	以上３点を入力の上ご送信下さい。こちらから折り返し連絡させて頂きます。<br><br>
-  	その他お問い合わせの方は折り返し希望のメールアドレス、または電話番号を入力の上ご送信ください。
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-6"><br>
+
+      <h5>
+        Lifes.では正社員、アルバイト問わず一緒に働いてくれる仲間を募集しています。<br><br>
+        新しいことに挑戦したい方、今の職場に不満を持っている方、<br><br>
+        お気軽に下記のフォームよりご応募ください。<br><br>
+        また応募以外でのお問い合わせにも順次ご返事しますので、<br><br>
+        法人様等もどうぞお問い合わせください。<br><br>
+      </h5>
+
+      <table class="table">
+        <tr>
+          <th>業務内容</th>
+          <td>営業(正社員)<br>イベントスタッフ(アルバイト)</td>
+        </tr>
+        <tr>
+          <th>契約期間</th>
+          <td>期間の定めなし</td>
+        </tr>
+         <tr>
+          <th>就業時間</th>
+          <td>10:00~18:00<br>11:00~19:00</td>
+        </tr>
+        <tr>
+          <th>残業</th>
+          <td>基本なし(見なし残業)</td>
+        </tr>
+        <tr>
+          <th>賃金</th>
+          <td>月給25万円〜(正社員)<br>日当1万円〜(アルバイト)</td>
+        </tr>
+        <tr>
+          <th>加入保険</th>
+          <td>雇用保険・労災保険</td>
+        </tr>
+      </table><hr>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+
+    <div class="col-xs-4"><br>
+
+      <h4>応募・お問い合わせ</h4>
+
+      <%= form_with model:@contact do |f| %>
+        <div><%= f.text_field :name, autofocus: true, class:'form-control',placeholder: "氏名・法人名"%></div><br>
+        <div><%= f.text_area :body, class:'form-control',placeholder: "内容" %></div><br>
+        <div class="center"><%= f.submit "送信",class:"btn btn-primary"%></div><hr>
+        <div>
+          応募の方は上記内容欄に<br>
+          ①メールアドレス<br>②連絡先電話番号<br>③正社員希望またはアルバイト希望での応募<br>
+          以上３点を入力の上ご送信下さい。こちらから折り返し連絡させて頂きます。<br>
+          その他お問い合わせの方は折り返し希望のメールアドレス、または電話番号を入力の上ご送信ください。<hr>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
+</div>

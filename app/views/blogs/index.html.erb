@@ -1,19 +1,62 @@
-<h3>about</h3>
-<br>
+<%= render '/header' %>
 
-<h3>社員Blog</h3>
-<table>
-  <% @blogs.each do |blog| %>
-    <tr>
-	  <td><%= image_tag attachment_url(blog, :image, :fill, 70, 70, format: "jpg") %></td>
-	  <td>
-	    <%= link_to blog_path(blog.id) do %>
-		  <%= blog.title %>
-		<% end %>
-	  </td>
-	  <td><%= blog.created_at.strftime('%Y/%m/%d %H:%M')%></td>
-	</tr>
-  <% end %>
-</table>
+<div class="about">
+  <div class="work-top">
+　  <span>About</span>
+  </div>
 
-<%= link_to "もどる",root_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-3"><br>
+      <div><img alt="社長画像" src="/ceo.jpg" style="height: 320px; margin-top:10px"></div>
+    </div>
+
+    <div class="col-xs-3"><br>
+      <div class="about-text">
+      	<p>
+      	  “人生文化祭”<br>
+          社名の由来にもなっています。<br>
+          我々は常に仕事を楽しみます。<br>
+          商売の基本は安く買ってそれより高く売る。<br>
+          どうやって仕入れるか？どうやって売るか？
+          どこで何を誰にするか？<br>
+          礼儀礼節、筋を通せば何事も思ったより自由です。<br>
+          仕事は誰もが経験し得る文化祭の延長線上だと思っています。<br>
+          その過程で各々の強みが新しい強みを生み、新たなチャレンジができると考えます。
+          我々は一生チャレンジします。<br><br>
+          株式会社Lifes. 社長　末吉 力朗
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-6">
+      <h3 class="center">社員BLOG</h3><br>
+
+        <table class="table table-striped">
+        <% @blogs.each do |blog| %>
+          <tr>
+	        <td><%= image_tag attachment_url(blog, :image, :fill, 70, 70, format: "jpg"),class: 'staff-image' %></td>
+	        <td>
+	          <%= link_to blog_path(blog.id) do %>
+		      <%= blog.title %>
+		      <% end %>
+	        </td>
+	        <td><%= blog.created_at.strftime('%Y年%m月%d日')%></td>
+	      </tr>
+        <% end %>
+        </table>
+        <div class="center"><%= paginate @blogs %></div>
+    </div>
+  </div>
+
+</div>
+</div>

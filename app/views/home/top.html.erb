@@ -1,8 +1,21 @@
-	<div class="video">
-	  <%= video_tag("/videos/home.mp4", autoplay: :true, muted: :true, loop: true, class: 'video-content') %>
-	</div><br><br>
+<%= render '/header' %>
 
-
-
-<%= link_to "アバウト",blogs_path %>
-<%= link_to "採用応募",new_contact_path %>
+<div class="top">
+  <div class="video">
+    <%= video_tag("/videos/topmovie.mp4", autoplay: :true, muted: :true, loop: true, class: 'video-content') %>
+  </div>
+  <div class="center top-text">
+    <h3>“希望を配る人”を輩出する</h3><br>
+    <h4>
+      リーダーとは“希望を配る人”<br><br>
+      それは素晴らしい熱量を共有する<br><br>
+      謙虚だが自信に溢れ、妥協がない<br><br>
+      常に最善をつくす、そして結果をだす<br><br>
+      何事にも感謝をする<br><br>
+      苦難に負けず乗り越えていける<br><br>
+      人情に熱く思いやりがある<br><br>
+      様々な“希望を配る人”を輩出し、<br><br>
+      世の中に貢献できる人、会社でありたい。<br>
+    </h4>
+  </div>
+</div>

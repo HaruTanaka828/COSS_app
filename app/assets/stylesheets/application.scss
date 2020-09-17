@@ -69,7 +69,6 @@ body{
 header{
 	height:60px;
 	line-height:40px;
-	background-color:rgba(255,255,255,0.5);
 }
 
 footer{
@@ -141,13 +140,35 @@ footer{
 
 // ----------------------------------------------------
 
-// トップ画面 --------------------------------------------
-
+// HP部分 --------------------------------------------
 
 .video-content{
-	margin-top:-170px;
 	height:1000px;
 	width:100%;
+}
+.top{
+	margin-top:-100px;
+}
+.Editlink{
+	color:rgba(0, 0, 0, 0.7);
+	height: 70px;
+}
+.navbar-fixed-top{
+	background-color:rgba(255,255,255,0.5);
+	height: 70px;
+}
+.navbar-fixed-top li{
+	list-style: none;
+	color:black;
+}
+.top-text{
+	margin-top:-75px;
+}
+.about{
+	margin-top: 70px;
+}
+.about-text{
+
 }
 
 // ----------------------------------------------------

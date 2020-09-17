@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
 	def index
-	  @blogs = Blog.all.reverse_order
+	  @blogs = Blog.all.page(params[:page]).reverse_order
 	end
 
 	def show
