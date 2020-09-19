@@ -39,20 +39,16 @@ body{
 .center span{
 	font-size: 15px;
 }
-
 .staff-image{
 	border-radius: 50%;
 }
-
 .work-lists{
 	font-size:20px;
 	margin:0 auto;
 }
-
 .work-list{
 	border-bottom: solid 2px;
 }
-
 .work-top{
 	font-size: 18px;
 	height:28px;
@@ -66,6 +62,8 @@ body{
 .navbar-text{
 	margin-right: 10px;
 }
+
+
 header{
 	height:60px;
 	line-height:40px;
@@ -78,11 +76,24 @@ footer{
    width:100%;
    height: 80px;
 }
+.footer{
+   border-top: solid 1px rgba(0,0,0,0.3);
+   background-color:rgba(255,165,0,1);
+   position: fixed;
+   bottom: 0;
+   width:100%;
+   height: 40px;
+}
 .footer-left{
 	text-align: left;
 	line-height: 80px;
 	margin-left: 15px;
-    font-size:35px;
+    float:left;
+}
+.footer-left2{
+	text-align: left;
+	line-height: 40px;
+	margin-left: 15px;
     float:left;
 }
 .footer-right{
@@ -93,11 +104,27 @@ footer{
 .footer-right p{
 	margin:0;
 }
-.insta{
+.insta i{
 	color:rgba(255,20,147,1);
+	font-size:32px;
 }
-.youtube{
+.twitter i{
+	font-size:32px;
+}
+.youtube i{
 	color: red;
+	font-size:32px;
+}
+.insta span{
+	color:rgba(255,20,147,1);
+	font-size:22px;
+}
+.twitter span{
+	font-size:22px;
+}
+.youtube span{
+	color: red;
+	font-size:22px;
 }
 
 // ----------------------------------------------------
