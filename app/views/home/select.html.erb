@@ -1,10 +1,18 @@
-<div class="center">
-  <h3>COSS_appへようこそ！</h3><br>
-  <p><%= link_to "一般HPはこちら", home_top_path %></p>
-  <p><%= link_to "管理者画面はこちら", new_admin_session_path %></p>
-  <p><%= link_to "社員画面はこちら", new_staff_session_path %></p><br>
+<div class="center work-lists"><br>
+  <h2>COSS_appへようこそ！！</h2><br>
+  <div>
+    <i class="far fa-address-card"></i> <%= link_to "公開HPはこちら", home_top_path, {class: "work-list"}%>
+  </div><br>
+  <div>
+  	<i class="fas fa-user"></i> <%= link_to "管理者画面はこちら", new_admin_session_path, {class: "work-list"}%>
+  </div><br>
+  <div>
+  	<i class="fas fa-users"></i> <%= link_to "社員画面はこちら", new_staff_session_path, {class: "work-list"} %>
+  </div><br>
+
   <p>ログイン用ユーザー</p>
   <p>アドレス：sample@gmail.com</p>
   <p>パスワード：sample123</p><br>
+
   <P>各画面の企業ロゴをクリック頂ければこの画面に戻れます。</P>
 </div>
