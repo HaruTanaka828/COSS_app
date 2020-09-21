@@ -13,7 +13,9 @@
   <nav class="navbar navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
+        <%= link_to destroy_admin_session_path, method: :delete do %>
         <img alt="ロゴ画像" src="<%= asset_path "logo.png" %>" style="height: 40px; margin-top:10px">
+        <% end %>
       </div>
       <p class="navbar-text navbar-right">
         <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
@@ -26,7 +28,9 @@
   <nav class="navbar navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
+        <%= link_to destroy_staff_session_path, method: :delete do %>
         <img alt="ロゴ画像" src="<%= asset_path "logo.png" %>" style="height: 40px; margin-top:10px">
+        <% end %>
       </div>
       <p class="navbar-text navbar-right">
         <i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>

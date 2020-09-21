@@ -2,7 +2,9 @@
   <nav class="navbar navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <img alt="ロゴ画像" src="/logo.png" style="height: 40px; margin-top:10px">
+        <%= link_to root_path do %>
+        <img alt="ロゴ画像" src="<%= asset_path "logo.png" %>" style="height: 40px; margin-top:10px">
+        <% end %>
       </div>
     </div>
   </nav>
