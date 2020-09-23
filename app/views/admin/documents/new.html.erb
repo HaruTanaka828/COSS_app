@@ -3,10 +3,10 @@
 </div>
 
 <div class="container file">
- <div class="row">
-  <div class="col-xs-4">
-  </div>
-  <div class="col-xs-4">
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-4">
 
 <%= form_for(@document, url: admin_documents_path) do |f| %>
 
@@ -14,14 +14,40 @@
   <div><span class="file-text">ファイル名</span>　<%= f.text_field :name,placeholder: "名前" %></div><br>
   <div><%= f.file_field :file %></div><br>
 
-  <div><%= f.submit '送信',class:"btn btn-sm btn-block btn-success"%></div><br>
+  <div><%= f.submit '送信',class:"btn btn-sm btn-block btn-success"%></div>
 
 <% end %>
-
-<%= link_to admin_root_path do %>
-  <p><i class="fas fa-backward"></i> Back</p>
-<% end %>
-
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6"><hr>
+      <h4 class="center">送信履歴</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+          <th>宛先</th>
+          <th>ファイル</th>
+          <th>日時</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @documents.each do |document| %>
+        <tr>
+　　　　　　<td><%= document.staff.full_name %></td>
+          <td><%= link_to document.name, rails_blob_path(document.file) %></td>
+          <td><%= document.created_at.strftime('%Y/%m/%d %H:%M')%></td>
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
+        <div class="center"><%= paginate @documents %></div>
+        <%= link_to admin_root_path do %>
+          <p><i class="fas fa-backward"></i> Back</p>
+        <% end %>
+    </div>
+  </div>
+
 </div>

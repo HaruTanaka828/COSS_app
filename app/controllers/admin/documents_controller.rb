@@ -2,6 +2,7 @@ class Admin::DocumentsController < ApplicationController
 
   def new
   	@document = Document.new
+    @documents = Document.all.page(params[:page]).reverse_order
   end
 
   def create

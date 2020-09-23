@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   	post '/', to: 'messages#create'
     resources :blogs,only: [:index,:show,:destroy]
     resources :documents,only: [:new,:create]
-    resources :achievements,only: [:create,:index]
+    resources :achievements,only: [:create,:index,:destroy]
     resources :ads,only: [:create,:index]
     resources :staffs,only: [:index,:show,:destroy]
   end

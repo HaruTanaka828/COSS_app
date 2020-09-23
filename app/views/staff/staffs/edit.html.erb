@@ -59,10 +59,14 @@
   </tr>
 </table>
 
-  <div class="right">
+  <div class="center">
     <%= f.submit "編集を更新",class:"btn btn-primary" %>
-  </div>
+  </div><br>
 <% end %>
+
+  <div class="center">
+    <%= link_to "登録アドレス・パスワードを変更する", edit_staff_registration_path %>
+  </div>
 
 <%= link_to staff_root_path do %>
   <p><i class="fas fa-backward"></i> Back</p>
