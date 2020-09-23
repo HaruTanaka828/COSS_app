@@ -59,40 +59,6 @@ Blog.create!([
   {staff_id: 2, image_id: "fb3e2a1051a5002d09aa5b7efdd396901decf12a492726dc64f3d5dd39c8", title: "憩いの場", body: "本日は弊社事務所の憩いの場(休憩スポット)をご紹介します！椅子に座りっぱなしだとどうしても少し疲れちゃうことがあるので、お昼休憩、小休憩時はこちらでゆっくりくつろぐことができます。短時間なら昼寝もOKなのでメリハリをつけてお仕事ができます。"},
   {staff_id: 5, image_id: "31b77c6d7e800635d11796e76eabca065318e9cbc7c08ad0ca8c3bb0d724", title: "社員旅行", body: "昨日、本日は淡路島への社員旅行でした！たまには仕事を忘れて思いっきり遊ぶのも大事だと思いました！プライベートでも上下関係を気にしないで楽しめる社風が弊社の特徴であり、アピールポイントでございます！！"}
 ])
-Contact.create!([
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: nil, body: nil},
-  {name: "田中 開", body: "aaaaaa"},
-  {name: "田中 開", body: "働きたいです！！がんばります！！！"},
-  {name: "田中 開", body: "aaaaas"},
-  {name: "田中 開", body: "ああああ"},
-  {name: "田中 開", body: "ああああ"},
-  {name: "田中 開", body: "ああああ"},
-  {name: "田中 開", body: "ああああ"},
-  {name: "田中 開", body: "採用応募\n①lifes@gmail.com\n②07056598280\n③正社員"},
-  {name: "田中 開", body: "あああああ"},
-  {name: "田中 開", body: "ああああ"},
-  {name: "田中 開", body: "aaaaaa"},
-  {name: "田中 開", body: "aaaa"},
-  {name: "田中 開", body: "aaaa"},
-  {name: "田中 開", body: "kakaka"},
-  {name: "田中 開", body: "kakakkaaa"},
-  {name: "はるお", body: "あああああ"},
-  {name: "aaa", body: "aaa"},
-  {name: "aaaa", body: "aaaaa"}
-])
 Document.create!([
   {staff_id: 13, name: "プログラミング画像"},
   {staff_id: 13, name: "給与明細"},
@@ -100,18 +66,5 @@ Document.create!([
   {staff_id: 13, name: "会議アジェンダ"}
 ])
 Message.create!([
-  {body: "aaaa"},
-  {body: "aaaaaa"},
-  {body: "aaaaa"},
-  {body: "シフト締切明日です！！"},
-  {body: "明日までに今尾にシフト提出よろしく！！"},
-  {body: "明日シフト提出締切だよ！！"},
-  {body: "みなさん給料明細送っといたので確認お願いします！！"},
-  {body: "シフト提出明日までだよ！！！"},
-  {body: "写真登録まだの人は登録お願いします！！"},
-  {body: "給与明細送っといたので、各自で確認・保存よろしくです！！"},
-  {body: "給与明細各自送っといたので確認、保存よろしくです！！"},
-  {body: "aaaa"},
-  {body: "明日給料日です！今月もお疲れ様でした！！"},
   {body: "今月もラスト３日！追い込んでいきましょう！！"}
 ])
