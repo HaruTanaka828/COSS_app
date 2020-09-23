@@ -85,6 +85,8 @@ gem 'dotenv-rails'
 
 gem 'chartkick'
 
+gem  'seed_dump'
+
 group :production do
   gem 'mysql2'
 end
