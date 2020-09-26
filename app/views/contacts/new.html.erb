@@ -2,7 +2,7 @@
 
 <div class="about">
   <div class="work-top">
-　  <span>採用・お問い合わせ</span>
+　  <span>Contact</span>
   </div>
 
 <div class="container">
@@ -11,19 +11,20 @@
     </div>
 
     <div class="col-xs-6"><br>
-
-      <h5>
+      <h2 class="center">採用応募・お問い合わせ</h2><hr>
+      <h5 class="center">
         Lifes.では正社員、アルバイト問わず一緒に働いてくれる仲間を募集しています。<br><br>
-        新しいことに挑戦したい方、今の職場に不満を持っている方、<br><br>
-        お気軽に下記のフォームよりご応募ください。<br><br>
-        また応募以外でのお問い合わせにも順次ご返事しますので、<br><br>
-        法人様等もどうぞお問い合わせください。<br><br>
+        営業の経験を積みたい方、新しいことに挑戦したい方、<br><br>
+        下記のフォームよりご応募ください。<br><br>
+        また応募以外でのお問い合わせにもご対応致します。<br><br>
+        法人様もどうぞお問い合わせください。<br><br><br>
       </h5>
 
-      <table class="table">
+      <h4>募集要項<span>(<%= Date.current.strftime('%Y年%m月%d日')%>現在)</span></h4>
+      <table class="table table-striped">
         <tr>
           <th>業務内容</th>
-          <td>営業(正社員)<br>イベントスタッフ(アルバイト)</td>
+          <td>正社員：営業、新事業開拓<br>アルバイト：イベントスタッフ</td>
         </tr>
         <tr>
           <th>契約期間</th>
@@ -34,18 +35,14 @@
           <td>10:00~18:00<br>11:00~19:00</td>
         </tr>
         <tr>
-          <th>残業</th>
-          <td>基本なし(見なし残業)</td>
-        </tr>
-        <tr>
           <th>賃金</th>
-          <td>月給25万円〜(正社員)<br>日当1万円〜(アルバイト)</td>
+          <td>月給○○円〜(正社員)<br>日当○○円〜(アルバイト)</td>
         </tr>
         <tr>
           <th>加入保険</th>
           <td>雇用保険・労災保険</td>
         </tr>
-      </table><hr>
+      </table><br>
 
     </div>
   </div>
@@ -56,10 +53,8 @@
 
     <div class="col-xs-4"><br>
 
-      <h4>応募・お問い合わせ</h4>
-
       <%= form_with model:@contact do |f| %>
-        <div><%= f.text_field :name, autofocus: true, class:'form-control',placeholder: "氏名・法人名"%></div><br>
+        <div><%= f.text_field :name, autofocus: true, class:'form-control',placeholder: "氏名・担当名"%></div><br>
         <div><%= f.text_area :body, class:'form-control',placeholder: "内容" %></div><br>
         <div class="center"><%= f.submit "送信",class:"btn btn-primary"%></div><hr>
         <div>
