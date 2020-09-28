@@ -19,6 +19,20 @@ Staff.create!([
 Message.create!([
   {body: "今月もラスト３日！！追い込んでいきましょう！！"}
 ])
+
+d1 = Document.new({staff_id: 13, name: "プログラミング画像"})
+d1.file.attach(io: File.open('public/file1.jpg'), filename: 'file1.jpg')
+d1.save!
+d2 = Document.new({staff_id: 13, name: "給与明細"})
+d2.file.attach(io: File.open('public/file2.pdf'), filename: 'file2.pdf')
+d2.save!
+d3 = Document.new({staff_id: 2, name: "社員旅行画像"})
+d3.file.attach(io: File.open('public/file3.jpg'), filename: 'file3.jpg')
+d3.save!
+d4 = Document.new({staff_id: 13, name: "会議アジェンダ"})
+d4.file.attach(io: File.open('public/file4.pdf'), filename: 'file4.pdf')
+d4.save!
+
 Ad.create!([
   {year: 2018},
   {year: 2019},
@@ -62,16 +76,3 @@ Blog.create!([
   {staff_id: 2, image:File.open("public/images/blog3.jpg"), title: "憩いの場", body: "本日は弊社事務所の憩いの場(休憩スポット)をご紹介します！椅子に座りっぱなしだとどうしても少し疲れちゃうことがあるので、お昼休憩、小休憩時はこちらでゆっくりくつろぐことができます。短時間なら昼寝もOKなのでメリハリをつけてお仕事ができます。"},
   {staff_id: 5, image:File.open("public/images/blog4.jpg"), title: "お花見", body: "本日は仕事終わりに会社のみんなでお花見に行きました♡楽しむ時は仕事を忘れて思いっきり楽しむのも大事だと思いました！オンオフのメリハリがはっきりしているところが弊社の社風であり、アピールポイントでございます！！"}
 ])
-
-d1 = Document.new({staff_id: 13, name: "プログラミング画像"})
-d1.file.attach(io: File.open('public/file1.jpg'), filename: 'file1.jpg')
-d1.save!
-d2 = Document.new({staff_id: 13, name: "給与明細"})
-d2.file.attach(io: File.open('public/file2.pdf'), filename: 'file2.pdf')
-d2.save!
-d3 = Document.new({staff_id: 2, name: "社員旅行画像"})
-d3.file.attach(io: File.open('public/file3.jpg'), filename: 'file3.jpg')
-d3.save!
-d4 = Document.new({staff_id: 13, name: "会議アジェンダ"})
-d4.file.attach(io: File.open('public/file4.pdf'), filename: 'file4.pdf')
-d4.save!
