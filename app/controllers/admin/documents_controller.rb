@@ -1,5 +1,7 @@
 class Admin::DocumentsController < ApplicationController
 
+  before_action :authenticate_admin!
+
   def new
   	@document = Document.new
     @documents = Document.all.page(params[:page]).reverse_order

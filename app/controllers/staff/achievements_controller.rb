@@ -1,5 +1,7 @@
 class Staff::AchievementsController < ApplicationController
 
+  before_action :authenticate_staff!
+
   def index
     @ads = Ad.all
   	@achievement = Achievement.new

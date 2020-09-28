@@ -1,17 +1,19 @@
 class Admin::BlogsController < ApplicationController
 
-	def index
-	  @blogs = Blog.all.reverse_order
-	end
+  before_action :authenticate_admin!
 
-	def show
-	  @blog = Blog.find(params[:id])
-	end
+  def index
+    @blogs = Blog.all.reverse_order
+  end
 
-    def destroy
-	  @blog = Blog.find(params[:id])
-	  @blog.destroy
-	  redirect_to admin_blogs_path
-    end
+  def show
+    @blog = Blog.find(params[:id])
+  end
+
+  def destroy
+    @blog = Blog.find(params[:id])
+	@blog.destroy
+	redirect_to admin_blogs_path
+  end
 
 end

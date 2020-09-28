@@ -1,5 +1,7 @@
 class Admin::AdsController < ApplicationController
 
+  before_action :authenticate_admin!
+
   def index
   	@ad = Ad.new
   	@ads = Ad.all
@@ -11,7 +13,7 @@ class Admin::AdsController < ApplicationController
   	redirect_to admin_ads_path
   end
 
-  private
+private
   def ad_params
   	params.require(:ad).permit(:year)
   end

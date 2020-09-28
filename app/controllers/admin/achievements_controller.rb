@@ -1,5 +1,7 @@
 class Admin::AchievementsController < ApplicationController
 
+  before_action :authenticate_admin!
+
   def index
     @ads = Ad.all
   	@achievement = Achievement.new
@@ -14,7 +16,7 @@ class Admin::AchievementsController < ApplicationController
   	redirect_to request.referer
   end
 
-  private
+private
   def achievement_params
   	params.require(:achievement).permit(:ad_id, :month, :profit)
   end

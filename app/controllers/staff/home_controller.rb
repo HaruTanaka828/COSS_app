@@ -1,7 +1,9 @@
 class Staff::HomeController < ApplicationController
 
-	def top
-		@messages = Message.all
-	end
+  before_action :authenticate_staff!
+
+  def top
+    @messages = Message.all
+  end
 
 end

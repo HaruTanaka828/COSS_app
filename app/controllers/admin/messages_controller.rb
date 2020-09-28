@@ -1,5 +1,7 @@
 class Admin::MessagesController < ApplicationController
 
+  before_action :authenticate_admin!
+
   def index
   	@messages = Message.all
   	@message = Message.new
@@ -9,7 +11,6 @@ class Admin::MessagesController < ApplicationController
     message = Message.new(message_params)
     message.save
     redirect_to admin_root_path
-    #redirect_to request.referer
   end
 
 private

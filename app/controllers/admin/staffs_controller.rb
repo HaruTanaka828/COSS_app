@@ -1,17 +1,19 @@
 class Admin::StaffsController < ApplicationController
 
-	def index
-	  @staffs = Staff.all
-	end
+  before_action :authenticate_admin!
 
-	def show
-	  @staff = Staff.find(params[:id])
-	end
+  def index
+    @staffs = Staff.all
+  end
 
-    def destroy
-	  @staff = Staff.find(params[:id])
-	  @staff.destroy
-	  redirect_to admin_staffs_path
-    end
+  def show
+    @staff = Staff.find(params[:id])
+  end
+
+  def destroy
+    @staff = Staff.find(params[:id])
+	@staff.destroy
+	redirect_to admin_staffs_path
+  end
 
 end
