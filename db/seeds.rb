@@ -16,6 +16,9 @@ Staff.create!([
   {email: "horiguchi@mail.com", password: "sample123", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, last_name: "堀口", first_name: "早紀", last_name_kana: "ホリグチ", first_name_kana: "サキ", position: "事務", staff_number: "1245", post_code: "1234567", address: "大阪府散布流町1丁目22　サンプルマンション333号", phone_number: "09012345678", emergency_relationship: "弟", emergency_number: "08012345678", image:File.open("public/images/face12.jpg"), accepted: true},
   {email: "sample@mail.com", password: "sample123", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, last_name: "田中", first_name: "太郎", last_name_kana: "タナカ", first_name_kana: "タロウ", position: "社員", staff_number: "1246", post_code: "1234567", address: "大阪府散布流町1丁目22　サンプルマンション333号", phone_number: "09012345678", emergency_relationship: "母", emergency_number: "08012345678", image: nil, accepted: true}
 ])
+Message.create!([
+  {body: "今月もラスト３日！！追い込んでいきましょう！！"}
+])
 Ad.create!([
   {year: 2018},
   {year: 2019},
@@ -72,7 +75,3 @@ d3.save!
 d4 = Document.new({staff_id: 13, name: "会議アジェンダ"})
 d4.file.attach(io: File.open('public/file4.pdf'), filename: 'file4.pdf')
 d4.save!
-
-Message.create!([
-  {body: "今月もラスト３日！！追い込んでいきましょう！！"}
-])
