@@ -16,11 +16,11 @@
     <td><%= f.attachment_field :image %></td>
   </tr>
   <tr>
-    <th>タイトル</th>
+    <th>タイトル<br>(1~15文字)</th>
     <td><span><%= f.text_field :title, placeholder:"タイトル"%></span></td>
   </tr>
   <tr>
-    <th>本文</th>
+    <th>本文<br>(20~200文字)</th>
     <td><span><%= f.text_area :body, placeholder: "本文",:size=>"48" %></span></td>
   </tr>
 

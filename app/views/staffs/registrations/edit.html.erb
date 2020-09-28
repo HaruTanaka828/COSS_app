@@ -46,9 +46,10 @@
           <%= f.password_field :current_password, autocomplete: "current-password",class:'form-control',placeholder: "現在のパスワード"%>
         </div><br>
 
-        <div class="actions">
-          <%= f.submit "変更",class:"btn btn-sm btn-block btn-primary" %>
-        </div><br>
+<% end %>
+
+        <div class="btn btn-sm btn-block btn-primary">変更</div><br>
+        <p>(サンプルサイトのためこちらの情報は変更できません)</p>
 
       </div>
         <%= link_to staff_edit_path do %>
@@ -59,7 +60,7 @@
   </div>
 </div>
 
-<% end %>
+
 
 
 

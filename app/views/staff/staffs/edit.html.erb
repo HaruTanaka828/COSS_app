@@ -8,6 +8,8 @@
     </div>
     <div class="col-xs-6">
 
+<h4 class="center"><%= current_staff.full_name %>さんの情報</h4>
+
 <%= form_for(@staff, url: staff_edit_path) do |f| %>
 
 <table class="table">
@@ -22,20 +24,6 @@
   <tr>
     <th>役職</th>
     <td><span><%= f.text_field :position, placeholder: "役職" %></span></td>
-  </tr>
-  <tr>
-    <th>氏名</th>
-    <td>
-      <span><%= f.text_field :last_name, placeholder: "姓"%></span>
-      <span><%= f.text_field :first_name, placeholder: "名"%></span>
-    </td>
-  </tr>
-  <tr>
-    <th>カナ</th>
-    <td>
-      <span><%= f.text_field :last_name_kana, placeholder: "セイ" %></span>
-      <span><%= f.text_field :first_name_kana, placeholder: "メイ" %></span>
-    </td>
   </tr>
   <tr>
     <th>郵便番号</th>
