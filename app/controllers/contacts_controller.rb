@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 	 def create
 	   @contact = Contact.new(contact_params)
 	   @contact.save
+	   flash[:success] = "お問い合わせありがとうございます。メール、または電話にてお返事させて頂きますので今しばらくお待ちください。(サンプルサイトのため送信されていません)"
 	   ContactMailer.send_mail(@contact).deliver
 	   redirect_to new_contact_path
 	 end

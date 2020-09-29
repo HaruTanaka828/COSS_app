@@ -11,6 +11,12 @@
     </div>
 
     <div class="col-xs-6"><br>
+      <% if flash[:success] %>
+      <div class="alert alert-success">
+      <%= flash[:success] %>
+      </div>
+      <% end %>
+
       <h2 class="center">採用応募・お問い合わせ</h2><hr>
       <h5 class="center">
         Lifes.では正社員、アルバイト問わず一緒に働いてくれる仲間を募集しています。<br><br>
