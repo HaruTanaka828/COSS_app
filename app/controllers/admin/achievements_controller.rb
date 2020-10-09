@@ -7,7 +7,6 @@ class Admin::AchievementsController < ApplicationController
   	@achievement = Achievement.new
     @achievements = Achievement.where(ad_id: params[:ad_id])
     @achievement_find = Achievement.find_by(ad_id: params[:ad_id])
-    @achievement_latest = Achievement.last(1)
   end
 
   def create
