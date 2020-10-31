@@ -4,27 +4,30 @@
     </div>
 
     <div class="col-xs-6">
-      <div class="center work-lists"><br><hr>
-        <h2>COSS_appへようこそ <i class="fas fa-exclamation"></i></h2>
-        <p><%= link_to "README","https://github.com/HaruTanaka828/COSS_app", {class: "work-list"} %></p><hr>
-          <p>ログイン用ユーザー(田中 太郎)</p>
-            <p>アドレス：sample@mail.com</p>
-            <p>パスワード：sample123</p><hr>
-          <div>
-  	        <i class="fas fa-user"></i> <%= link_to "管理者専用画面はこちら", new_admin_session_path, {class: "work-list"}%>
-          </div><br>
-          <div>
-  	        <i class="fas fa-users"></i> <%= link_to "社員専用画面はこちら", new_staff_session_path, {class: "work-list"} %>
-          </div><br>
-          <div>
-            <i class="far fa-address-card"></i> <%= link_to "企業サイトはこちら", home_path, {class: "work-list"}%>
-          </div><br>
+      <div class="center work-lists"><br><hr class="style-one">
+        <h2>COSS_appへようこそ <i class="fas fa-exclamation"></i></h2><hr class="style-one">
+          <p>↓各画面リンク↓</p>
+          <div class="list-group">
+            <a class="list-group-item" href="/admins/sign_in"><i class="fas fa-user"></i>管理者専用画面</a>
+            <a class="list-group-item" href="/staffs/sign_in"><i class="fas fa-users"></i>社員専用画面</a>
+            <a class="list-group-item" href="/home"><i class="far fa-address-card"></i>企業サイト</a>
+          </div>
+          <p>↓サンプルユーザー↓</p>
+          <table class="table table-bordered">
+            <tr>
+              <td>アドレス</td><td>sample@mail.com</td>
+            </tr>
+            <tr>
+              <td>パスワード</td><td>sample123</td>
+            </tr>
+          </table><hr>
             <P class="font-sm">
               各画面の企業ロゴをクリック頂ければこの画面に戻れます。<br>
               毎時0分にサンプルデータにリセットされるので、<br>
               データの追加、編集、削除もどうぞお試しください。<br>
               追加、編集をされる場合個人情報の取り扱いにご注意ください。
             </P>
+        <p><%= link_to "ポートフォリオREADMEはこちら","https://github.com/HaruTanaka828/COSS_app"%></p>
        </div>
     </div>
 
