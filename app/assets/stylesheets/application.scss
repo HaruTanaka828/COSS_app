@@ -17,11 +17,12 @@
 @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap');
 
 // 全体 --------------------------------------------
 
 body{
-	font-family: Noto, Hiragino Sans,Helvetica,Arial,sans-serif;
+    font-family: 'Noto Serif JP', serif;
     min-height: 100vh;
     position: relative;
     padding-bottom: 120px;
@@ -186,12 +187,12 @@ hr.style-one {
 // HP部分 --------------------------------------------
 
 .video-content{
-	height:1000px;
+	height:100vh;
 	width:100%;
 }
-.top{
-	margin-top:-100px;
-}
+
+
+
 .Editlink{
 	color:rgba(0, 0, 0, 0.7);
 	height: 70px;
@@ -204,9 +205,11 @@ hr.style-one {
 	list-style: none;
 	color:black;
 }
-.top-text{
-	margin-top:-75px;
-
+.text1{
+	font-size: 35px;
+}
+.text2{
+	font-size: 25px;
 }
 .about{
 	margin-top: 70px;
