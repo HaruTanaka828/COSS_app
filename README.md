@@ -1,5 +1,3 @@
-# https://coss-app.work
-
 ## サイト概要
 中小企業の運用をサポートするサービス(Company Operation Support Service)
 
